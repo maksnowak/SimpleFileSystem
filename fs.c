@@ -340,8 +340,9 @@ void delete_fs(char* fs_name) {
         printf("Error: could not open disk file.\n");
         return;
     }
-    // load superblock, inodes, and data blocks into memory
+    // load superblock into memory to check if it is a file system
     fseek(fs, 0, SEEK_SET);
+    superblock = (SUPERBLOCK*) malloc(sizeof(SUPERBLOCK));
     fread(superblock, sizeof(SUPERBLOCK), 1, fs);
     if (superblock->magic_number != MAGIC_NUMBER) {
         printf("Error: file is not a file system.\n");
