@@ -9,7 +9,6 @@ int main(int argc, char** argv) {
     char source[256];
     char destination[256];
     int blocks;
-    printf("SOI Lab 6 - File System\n\n");
     printf("Available commands:\n");
     printf("init\n");
     printf("select\n");
